@@ -104,6 +104,23 @@
         <source src="https://github.com/ZachDK2478/utfm-newsletter-spring2025/raw/refs/heads/main/music/Newsbopperv2.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    <script>
+        var audio = document.getElementById("myaudio");
+        audio.volume = 0.5;
+        function playDaMusic(){
+            audio.currentTime = 0;
+            audio.play();
+           //  evil if (!navigator.userAgent.toLowerCase().includes('firefox')) console.log setTimeout(playDaMusic, audio.duration*1000); 
+        }
+
+        playDaMusic();
+        document.addEventListener('click', musicPlay);
+function musicPlay() {
+    if (audio.currentTime == 0 )  playDaMusic();
+    document.removeEventListener('click', musicPlay);
+
+}
+      </script>
     
     <figure>
         <figcaption style="font-size: 20px;">Official Newsletter music track: "Newsbopper" by ZachDK</figcaption>
