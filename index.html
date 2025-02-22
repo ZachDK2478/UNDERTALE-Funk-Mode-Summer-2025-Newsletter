@@ -18,7 +18,6 @@
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
-            overflow: hidden;
             margin: 0;
             padding: 0;
         }
@@ -57,20 +56,20 @@
             background-position: center;
             background-image: url("assets/images/anim/test-soulslidingbg.png");
             filter: opacity(0.1);
-            transform: translate(-32px, -32px);
             animation: scroll 15s linear infinite forwards;
             z-index: -9999;
         }
 
         @keyframes scroll {
             0% {
-                transform: translate(0, 0);
+                transform: translate(0, -64px);
             }
 
             100% {
-                transform: translate(-64px, -128px);
+                transform: translate(-64px, -192px);
             }
         }
+
 
         /* Logo Styles */
         #logo {
@@ -91,7 +90,8 @@
             font-weight: bold;
             font-style: normal;
             font-size: 30px;
-            color: white; /* Fixes black text bug */
+            color: white;
+            /* Fixes black text bug */
         }
 
         /* Sans Text styling */
@@ -100,7 +100,8 @@
             font-weight: bold;
             font-style: normal;
             font-size: 30px;
-            color: white; /* Fixes black text bug */
+            color: white;
+            /* Fixes black text bug */
         }
 
         /* Responsive adjustments for mobile devices */
@@ -157,11 +158,15 @@
         <h1>WELCOME TO THE UNDERGROUND!</h1>
     </div>
     <div class="dts-text">
-        <p>Oh man, a newsletter? For an Undertale mod? How had I not thought of that before? Clearly, we are not copying Supreme Leader Toby!!</p>
+        <p>Oh man, a newsletter? For an Undertale mod? How had I not thought of that before? Clearly, we are not copying
+            Supreme Leader Toby!!</p>
         <p>&nbsp;</p>
-        <p>Well, to explain a little— I think the best way to provide updates, news, or teasers about "UNDERTALE: Funk Mode" mod is through this format.</p>
+        <p>Well, to explain a little— I think the best way to provide updates, news, or teasers about "UNDERTALE: Funk
+            Mode" mod is through this format.</p>
         <p>&nbsp;</p>
-        <p>Of course, don't expect this to be super consistent; we'll only post when we have something to show or when we have important development news to share in a more detailed way. That is, of course, if we don’t forget that this site exists!</p>
+        <p>Of course, don't expect this to be super consistent; we'll only post when we have something to show or when
+            we have important development news to share in a more detailed way. That is, of course, if we don’t forget
+            that this site exists!</p>
         <p>&nbsp;</p>
     </div>
 </body>
