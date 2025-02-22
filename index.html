@@ -3,7 +3,7 @@
 
 <head>
     <!-- Sets the title of the page at the top. -->
-    <title>UTFM: Intro to the Newsletters</title>
+    <title>2025 Newsletter</title>
     <!-- Sets the webpage favicon. -->
     <link rel="shortcut icon" type="image/x-icon"
         href="https://raw.githubusercontent.com/ZachDK2478/UNDERTALE-Funk-Mode/refs/heads/main/images/favicon/utfm-perseverance.ico">
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <!-- Ignore the following meta code. -->
     <meta name="description"
-        content="The official website for UNDERTALE: Funk-Mode, basically linking to each official newsletter, and some other important pages.!">
+            content="The official website for the UNDERTALE: Funk Mode 2025 Spring Newsletter. We hope you enjoy!">
     <meta name="keywords" content="UNDERTALE, Funk-Mode, UTFM, FNF, Mod">
 
     <!-- Next up is the style code to edit the style of various functions in the site! This is very important. -->
@@ -30,7 +30,7 @@
 
         @font-face {
             font-family: DTS;
-            src: url("../UNDERTALE-Funk-Mode/fonts/DeterminationSansRegular.ttf") format('truetype');
+            src: url("/fonts/DeterminationSansRegular.ttf") format('truetype');
             font-weight: bold;
             font-style: normal;
         }
@@ -50,7 +50,7 @@
             display: flex;
             background-attachment: fixed;
             background-position: center;
-            background-image: url("..images/bg/test-soulslidingbg.png");
+            background-image: url("assets/images/anim/test-soulslidingbg.png");
             filter: opacity(0.1);
             transform: translate(-32px, -32px);
             animation: scroll 15s linear infinite forwards;
@@ -59,8 +59,7 @@
 
 
         body {
-
-            background-image: url("images/bg/test-funkmodebg.png");
+            background-color: black;
             background-attachment: fixed;
             background-position: center;
             -o-background-size: cover;
@@ -253,42 +252,6 @@
                 }
             }
 
-            #LINKS {
-                margin: auto;
-                position: absolute;
-                display: inline-flex;
-                top: 50vw;
-                justify-content: center;
-                left: 0;
-                margin: auto;
-
-
-                width: 100vw;
-
-                li {
-
-                    p {
-                        display: none;
-                    }
-
-                    img {
-                        width: 10vw;
-
-                        max-width: 200px;
-
-                    }
-                }
-
-
-
-                li:hover {
-                    img {
-                        opacity: 0.5;
-
-                    }
-                }
-            }
-        }
     </style>
 </head>
 
@@ -301,19 +264,11 @@
 
         </div>
 
-        <img src="images/main/mod-logo.png" id="logo" alt="Undertale: Funk-Mode Logo"
-            title="The official logo for UT:FM!">
-
-        <ul id='LINKS'>
-            <li onclick='window.location.href = "https://x.com/UTfunkmode"; '>
-                <img title="The official UNDERTALE: Funk-Mode Twitter account!"
-                    src="https://img.icons8.com/?size=100&id=60469&format=png&color=000000">
-                <p> * Discord </p>
-            </li>
-        </ul>
+        <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo"
+            title="The official newsletter logo (Spring 2025 edition)">
 
         <audio autoplay id="myaudio" loop>
-            <source src="audio/menu/chillin" type="audio/flac">
+            <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
             Your browser does not support the audio element.
         </audio>
         <script>
