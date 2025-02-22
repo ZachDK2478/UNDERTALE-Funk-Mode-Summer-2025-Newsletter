@@ -28,31 +28,10 @@
       color: white;
     }
     
-    /* Font Faces */
+    /* Font Face for DTS (used in .dts-text) */
     @font-face {
       font-family: DTS;
       src: url("assets/fonts/determination.ttf") format('truetype');
-      font-weight: bold;
-      font-style: normal;
-    }
-    
-    @font-face {
-      font-family: sans;
-      src: url("assets/fonts/sansfont.ttf") format('truetype');
-      font-weight: bold;
-      font-style: normal;
-    }
-    
-    @font-face {
-      font-family: papyru;
-      src: url("assets/fonts/papyfont.ttf") format('truetype');
-      font-weight: bold;
-      font-style: normal;
-    }
-    
-    @font-face {
-      font-family: crypt;
-      src: url("assets/fonts/crypt.ttf") format('truetype');
       font-weight: bold;
       font-style: normal;
     }
@@ -91,81 +70,6 @@
       transform: translateY(50%);
     }
     
-    /* Box Styles */
-    .box {
-      background-color: black;
-      color: white;
-      padding: 10px;
-      border: 5px solid hsl(0, 0%, 100%);
-      outline: 5px solid hsl(0, 0%, 0%);
-      margin-bottom: 15px;
-      width: 15vw;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-    
-    .box:hover * {
-      color: yellow;
-    }
-    
-    /* Images inside #thebigBox */
-    #thebigBox img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-    
-    /* Wrap container */
-    .wrap {
-      display: inline-flex;
-      margin-left: 40%;
-    }
-    
-    /* LINKS Section */
-    #LINKS {
-      position: absolute;
-      left: 75%;
-      width: 20%;
-      background-color: black;
-      top: 0;
-      display: flex;
-      justify-content: center;
-    }
-    
-    #LINKS li {
-      display: flex;
-      transform: translate(-20px, 10px);
-      outline: 5px solid #ffffff;
-      margin-bottom: 20px;
-    }
-    
-    #LINKS li p {
-      margin-left: 10px;
-      font-size: 1.5vw;
-      color: white;
-    }
-    
-    #LINKS li img {
-      max-width: 200px;
-    }
-    
-    #LINKS li:hover {
-      background-color: rgb(23, 23, 23);
-    }
-    
-    #LINKS li:hover p {
-      color: yellow;
-    }
-    
-    #LINKS img {
-      width: 20%;
-      height: auto;
-      object-fit: contain;
-      margin-left: 20px;
-      position: relative;
-      top: 50%;
-    }
-    
     /* Center images by default */
     img {
       display: block;
@@ -180,52 +84,11 @@
       font-size: 30px;
     }
     
-    /* Responsive Styles for mobile devices */
+    /* Responsive adjustments for mobile devices */
     @media (orientation: portrait), (max-width: 900px) {
       body {
         overflow-x: hidden;
         text-align: center;
-      }
-      
-      .KILL {
-        display: none;
-      }
-      
-      .box {
-        margin-top: 30%;
-        margin-bottom: -20%;
-        text-align: center;
-      }
-      
-      .box.button {
-        max-width: 30vw;
-      }
-      
-      ul {
-        position: relative;
-        text-align: center;
-        width: 100%;
-        padding-left: 0;
-      }
-      
-      #thebigBox {
-        margin-bottom: 0;
-      }
-      
-      #ctnButtons {
-        margin: auto;
-        display: flex;
-      }
-      
-      #ctnButtons li {
-        width: 40vw;
-        margin: auto;
-        margin-top: 15vw;
-        margin-bottom: 20px;
-      }
-      
-      #ctnButtons li:hover p {
-        color: yellow;
       }
     }
   </style>
