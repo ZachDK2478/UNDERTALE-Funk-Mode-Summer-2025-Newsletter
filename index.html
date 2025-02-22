@@ -1,136 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-  <meta name="description" content="The official website for the UNDERTALE: Funk Mode 2025 Spring Newsletter. We hope you enjoy!">
-  <meta name="keywords" content="UNDERTALE, Funk-Mode, UTFM, FNF, Mod">
-  <title>Happy Spring!</title>
-  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/ZachDK2478/UNDERTALE-Funk-Mode/refs/heads/main/images/favicon/utfm-perseverance.ico">
-  
-  <style>
-    /* Global Styles */
-    body {
-      background-color: black;
-      background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-    }
-    
-    p {
-      max-width: 850px;
-      word-wrap: break-word;
-      margin: auto;
-      text-align: center;
-      color: white;
-    }
-    
-    /* Font Face for DTS (used in .dts-text) */
-    @font-face {
-      font-family: DTS;
-      src: url("assets/fonts/determination.ttf") format('truetype');
-      font-weight: bold;
-      font-style: normal;
-    }
-    
-    /* Background Animation */
-    #soulBG {
-      position: fixed;
-      width: 200%;
-      height: 200%;
-      display: flex;
-      background-attachment: fixed;
-      background-position: center;
-      background-image: url("assets/images/anim/test-soulslidingbg.png");
-      filter: opacity(0.1);
-      transform: translate(-32px, -32px);
-      animation: scroll 15s linear infinite forwards;
-      z-index: -9999;
-    }
-    
-    @keyframes scroll {
-      0% {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(-64px, -128px);
-      }
-    }
-    
-    /* Logo Styles */
-    #logo {
-      display: block;
-      margin: 20px auto;
-      height: 20vw;
-    }
-    
-    /* Center images with proper spacing */
-    img {
-      display: block;
-      margin: 20px auto;
-    }
-    
-    /* DTS Text styling */
-    .dts-text {
-      font-family: DTS;
-      font-weight: bold;
-      font-style: normal;
-      font-size: 30px;
-    }
-    
-    /* Responsive adjustments for mobile devices */
-    @media (orientation: portrait), (max-width: 900px) {
-      body {
-        overflow-x: hidden;
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div id="soulBG"></div>
-  
-  <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo" title="The official newsletter logo (Spring 2025 edition)">
-  
-  <img src="assets/images/little-sprites/gfriend-looker.gif" id="gfriend-lookin" alt="Sprite by Frisbee" title="The silly guys">
-  
-  <audio autoplay id="myaudio" loop>
-    <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
-    Your browser does not support the audio element.
-  </audio>
-  
-  <script>
-    (function() {
-      var audio = document.getElementById("myaudio");
-      audio.volume = 0.5;
-  
-      function playDaMusic() {
-        audio.currentTime = 0;
-        audio.play();
-      }
-  
-      playDaMusic();
-  
-      function musicPlay() {
-        if (audio.currentTime === 0) {
-          playDaMusic();
-        }
-        document.removeEventListener('click', musicPlay);
-      }
-  
-      document.addEventListener('click', musicPlay);
-    })();
-  </script>
-  
-  <div class="dts-text">
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <h1 style= font-family: sansfont;>WELCOME TO THE UNDERGROUND!</h1>
-    <p>This is a test message. Hooray!</p>
 
-  </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="description"
+        content="The official website for the UNDERTALE: Funk Mode 2025 Spring Newsletter. We hope you enjoy!">
+    <meta name="keywords" content="UNDERTALE, Funk-Mode, UTFM, FNF, Mod">
+    <title>Happy Spring!</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/ZachDK2478/UNDERTALE-Funk-Mode/refs/heads/main/images/favicon/utfm-perseverance.ico">
+
+    <style>
+        /* Global Styles */
+        body {
+            background-color: black;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            max-width: 850px;
+            word-wrap: break-word;
+            margin: auto;
+            text-align: center;
+            color: white;
+        }
+
+        /* Font Face for DTS (used in .dts-text) */
+        @font-face {
+            font-family: DTS;
+            src: url("assets/fonts/determination.ttf") format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Font Face for Sans Font (used in .san-text) */
+        @font-face {
+            font-family: Sans;
+            src: url("assets/fonts/sansfont.ttf") format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Background Animation */
+        #soulBG {
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            display: flex;
+            background-attachment: fixed;
+            background-position: center;
+            background-image: url("assets/images/anim/test-soulslidingbg.png");
+            filter: opacity(0.1);
+            transform: translate(-32px, -32px);
+            animation: scroll 15s linear infinite forwards;
+            z-index: -9999;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-64px, -128px);
+            }
+        }
+
+        /* Logo Styles */
+        #logo {
+            display: block;
+            margin: 20px auto;
+            height: 20vw;
+        }
+
+        /* Center images with proper spacing */
+        img {
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* DTS Text styling */
+        .dts-text {
+            font-family: DTS;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        /* Sans Text styling */
+        .san-text {
+            font-family: Sans;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        /* Responsive adjustments for mobile devices */
+        @media (orientation: portrait),
+        (max-width: 900px) {
+            body {
+                overflow-x: hidden;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="soulBG"></div>
+
+    <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo"
+        title="The official newsletter logo (Spring 2025 edition)">
+
+    <img src="assets/images/little-sprites/gfriend-looker.gif" id="gfriend-lookin" alt="Sprite by Frisbee"
+        title="The silly guys">
+
+    <audio autoplay id="myaudio" loop>
+        <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        (function () {
+            var audio = document.getElementById("myaudio");
+            audio.volume = 0.5;
+
+            function playDaMusic() {
+                audio.currentTime = 0;
+                audio.play();
+            }
+
+            playDaMusic();
+
+            function musicPlay() {
+                if (audio.currentTime === 0) {
+                    playDaMusic();
+                }
+                document.removeEventListener('click', musicPlay);
+            }
+
+            document.addEventListener('click', musicPlay);
+        })();
+    </script>
+
+    <div class="san-text">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h1>WELCOME TO THE UNDERGROUND!</h1>
+    </div>
+    <div class="dts-text">
+        <p>Oh man, a newsletter? For an Undertale mod? How had I not thought of that before? Clearly, we are not copying Supreme Leader Toby!!</p>
+        <p>Well, to explain a little— I think the best way to provide updates, news, or teasers about "UNDERTALE: Funk Mode" mod is through this format.</p>
+        <p>Of course, don't expect this to be super consistent; we'll only post when we have something to show or when we have important development news to share in a more detailed way. That is, of course, if we don’t forget that this site exists!</p>
+    </div>
 </body>
+
 </html>
