@@ -1,324 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Sets the title of the page at the top. -->
-    <title>Happy Spring!</title>
-    <!-- Sets the webpage favicon. -->
-    <link rel="shortcut icon" type="image/x-icon"
-        href="https://raw.githubusercontent.com/ZachDK2478/UNDERTALE-Funk-Mode/refs/heads/main/images/favicon/utfm-perseverance.ico">
-    <!-- Sets character encoding. -->
-    <meta charset="UTF-8">
-    <!-- Sets website scaling depending on device. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <!-- Ignore the following meta code. -->
-    <meta name="description"
-        content="The official website for the UNDERTALE: Funk Mode 2025 Spring Newsletter. We hope you enjoy!">
-    <meta name="keywords" content="UNDERTALE, Funk-Mode, UTFM, FNF, Mod">
-
-    <!-- Next up is the style code to edit the style of various functions in the site! This is very important. -->
-
-    <style>
-        /* Text style settings */
-        p {
-            max-width: 850px;
-            word-wrap: break-word;
-            margin: auto;
-            text-align: center;
-            color: white;
-        }
-
-        @font-face {
-            font-family: DTS;
-            src: url("assets/fonts/determination.ttf") format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: sans;
-            src: url("assets/fonts/sansfont.ttf") format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: papyru;
-            src: url("assets/fonts/papyfont.ttf") format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: crypt;
-            src: url("assets/fonts/crypt.ttf") format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-
-        .dts-text {
-            font-family: DTS;
-            font-weight: bold;
-            font-style: normal;
-            font-size: 30px;
-        }
-
-        /* Background style code. */
-        #soulBG {
-            position: fixed;
-            width: 200%;
-            height: 200%;
-            display: flex;
-            background-attachment: fixed;
-            background-position: center;
-            background-image: url("assets/images/anim/test-soulslidingbg.png");
-            filter: opacity(0.1);
-            transform: translate(-32px, -32px);
-            animation: scroll 15s linear infinite forwards;
-            z-index: -9999;
-        }
-
-
-        body {
-            background-color: black;
-            background-attachment: fixed;
-            background-position: center;
-            -o-background-size: cover;
-            -moz-background-size: cover;
-            -webkit-background-size: cover;
-            background-size: cover;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translate(-0px, -0px);
-            }
-
-            100% {
-                transform: translate(-64px, -128px);
-            }
-        }
-
-        #thebigBox images {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        #logo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            height: 35vw;
-        }
-
-        .wrap {}
-
-        .box {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            border: 5px solid hsl(0, 0%, 100%);
-            outline: 5px solid hsl(0, 0%, 0%);
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        @media (orientation: landscape) and (min-width: 900px) {
-
-            /* pc and tablet */
-            body {
-                overflow: hidden;
-            }
-
-
-            #logo {
-                height: 20vw;
-                margin-left: 5%;
-                top: 50%;
-                transform: translateY(50%);
-            }
-
-            .box {
-                width: 15vw;
-                font-size: 1.1rem;
-
-                &:hover {
-                    * {
-                        color: yellow;
-                    }
-                }
-
-            }
-
-            img {
-                position: center;
-            }
-
-            p {
-                position: center;
-            }
-
-
-
-            #thebigBox {
-                width: 30vw;
-                margin-left: 20%;
-                margin-top: -50%;
-            }
-
-            .wrap {
-
-                display: inline-flex;
-                margin-left: 40%;
-
-            }
-
-            #LINKS {
-                position: absolute;
-                left: 75%;
-                width: 20%;
-                background-color: black;
-                top: 0px;
-                justify-content: center;
-
-                li {
-                    display: flex;
-                    transform: translate(-20px, 10px);
-                    outline: #ffffff solid 5px;
-                    margin-bottom: 20px;
-
-                    p {
-                        margin-left: 10px;
-                        font-size: 1.5vw;
-                        color: white;
-
-                    }
-
-                    img {
-                        max-width: 200px;
-                    }
-
-                }
-
-                li:hover {
-                    background-color: rgb(23, 23, 23);
-
-                    p {
-                        color: yellow;
-                    }
-                }
-
-                img {
-                    width: 20%;
-                    height: auto;
-                    object-fit: contain;
-                    margin-left: 20px;
-                    top: 50%;
-                }
-            }
-        }
-
-        @media (orientation: portrait) or (max-width: 900px) {
-
-            /* phones and shit */
-            body {
-                overflow-x: hidden;
-                text-align: center;
-            }
-
-            .KILL {
-                display: none;
-            }
-
-            .box {
-                margin-top: 30%;
-                margin-bottom: -20%;
-                text-align: center;
-
-
-                &.button {
-                    max-width: 30vw;
-                }
-            }
-
-            ul {
-                position: relative;
-                text-align: center;
-                width: 100%;
-                padding-left: 0;
-
-            }
-
-
-
-            #thebigBox {
-                margin-bottom: 0px;
-            }
-
-            #ctnButtons {
-                margin: auto;
-                display: flex;
-
-                li {
-                    /*  opacity: 0.5; */
-                    width: 40vw;
-
-                    margin: auto;
-                    margin-top: 15vw;
-                    margin-bottom: 20px;
-                }
-
-                li:hover {
-                    p {
-                        color: yellow;
-                    }
-                }
-            }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta name="description" content="The official website for the UNDERTALE: Funk Mode 2025 Spring Newsletter. We hope you enjoy!">
+  <meta name="keywords" content="UNDERTALE, Funk-Mode, UTFM, FNF, Mod">
+  <title>Happy Spring!</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/ZachDK2478/UNDERTALE-Funk-Mode/refs/heads/main/images/favicon/utfm-perseverance.ico">
+  
+  <style>
+    /* Global Styles */
+    body {
+      background-color: black;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    
+    p {
+      max-width: 850px;
+      word-wrap: break-word;
+      margin: auto;
+      text-align: center;
+      color: white;
+    }
+    
+    /* Font Faces */
+    @font-face {
+      font-family: DTS;
+      src: url("assets/fonts/determination.ttf") format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: sans;
+      src: url("assets/fonts/sansfont.ttf") format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: papyru;
+      src: url("assets/fonts/papyfont.ttf") format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    
+    @font-face {
+      font-family: crypt;
+      src: url("assets/fonts/crypt.ttf") format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    
+    /* Background Animation */
+    #soulBG {
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      display: flex;
+      background-attachment: fixed;
+      background-position: center;
+      background-image: url("assets/images/anim/test-soulslidingbg.png");
+      filter: opacity(0.1);
+      transform: translate(-32px, -32px);
+      animation: scroll 15s linear infinite forwards;
+      z-index: -9999;
+    }
+    
+    @keyframes scroll {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-64px, -128px);
+      }
+    }
+    
+    /* Logo Styles */
+    #logo {
+      display: block;
+      margin: 0 auto;
+      height: 20vw;
+      position: relative;
+      top: 50%;
+      transform: translateY(50%);
+    }
+    
+    /* Box Styles */
+    .box {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border: 5px solid hsl(0, 0%, 100%);
+      outline: 5px solid hsl(0, 0%, 0%);
+      margin-bottom: 15px;
+      width: 15vw;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    
+    .box:hover * {
+      color: yellow;
+    }
+    
+    /* Images inside #thebigBox */
+    #thebigBox img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    
+    /* Wrap container */
+    .wrap {
+      display: inline-flex;
+      margin-left: 40%;
+    }
+    
+    /* LINKS Section */
+    #LINKS {
+      position: absolute;
+      left: 75%;
+      width: 20%;
+      background-color: black;
+      top: 0;
+      display: flex;
+      justify-content: center;
+    }
+    
+    #LINKS li {
+      display: flex;
+      transform: translate(-20px, 10px);
+      outline: 5px solid #ffffff;
+      margin-bottom: 20px;
+    }
+    
+    #LINKS li p {
+      margin-left: 10px;
+      font-size: 1.5vw;
+      color: white;
+    }
+    
+    #LINKS li img {
+      max-width: 200px;
+    }
+    
+    #LINKS li:hover {
+      background-color: rgb(23, 23, 23);
+    }
+    
+    #LINKS li:hover p {
+      color: yellow;
+    }
+    
+    #LINKS img {
+      width: 20%;
+      height: auto;
+      object-fit: contain;
+      margin-left: 20px;
+      position: relative;
+      top: 50%;
+    }
+    
+    /* Center images by default */
+    img {
+      display: block;
+      margin: auto;
+    }
+    
+    /* DTS Text styling */
+    .dts-text {
+      font-family: DTS;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 30px;
+    }
+    
+    /* Responsive Styles for mobile devices */
+    @media (orientation: portrait), (max-width: 900px) {
+      body {
+        overflow-x: hidden;
+        text-align: center;
+      }
+      
+      .KILL {
+        display: none;
+      }
+      
+      .box {
+        margin-top: 30%;
+        margin-bottom: -20%;
+        text-align: center;
+      }
+      
+      .box.button {
+        max-width: 30vw;
+      }
+      
+      ul {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+      }
+      
+      #thebigBox {
+        margin-bottom: 0;
+      }
+      
+      #ctnButtons {
+        margin: auto;
+        display: flex;
+      }
+      
+      #ctnButtons li {
+        width: 40vw;
+        margin: auto;
+        margin-top: 15vw;
+        margin-bottom: 20px;
+      }
+      
+      #ctnButtons li:hover p {
+        color: yellow;
+      }
+    }
+  </style>
 </head>
-
-<!-- Now here's the real meat and potatoes of the site, the site's actual content! -->
-
-<main>
-
-    <body>
-        <div id="soulBG">
-
-        </div>
-
-        <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo"
-            title="The official newsletter logo (Spring 2025 edition)">
-
-        <img src="assets/images/little-sprites/gfriend-looker.gif" id="gfriend-lookin" alt="Sprite by Frisbee"
-            title="The silly guys">
-
-        <audio autoplay id="myaudio" loop>
-            <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-        <script>
-            var audio = document.getElementById("myaudio");
-            audio.volume = 0.5;
-            function playDaMusic() {
-                audio.currentTime = 0;
-                audio.play();
-                //  evil if (!navigator.userAgent.toLowerCase().includes('firefox')) console.log setTimeout(playDaMusic, audio.duration*1000); 
-            }
-
-            playDaMusic();
-            document.addEventListener('click', musicPlay);
-            function musicPlay() {
-                if (audio.currentTime == 0) playDaMusic();
-                document.removeEventListener('click', musicPlay);
-            }
-        </script>
-
-        <div class="dts-text">
-            <p>This is a test message. Hooray!</p>
-        </div>
-    </body>
-</main>
+<body>
+  <div id="soulBG"></div>
+  
+  <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo" title="The official newsletter logo (Spring 2025 edition)">
+  
+  <img src="assets/images/little-sprites/gfriend-looker.gif" id="gfriend-lookin" alt="Sprite by Frisbee" title="The silly guys">
+  
+  <audio autoplay id="myaudio" loop>
+    <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <script>
+    (function() {
+      var audio = document.getElementById("myaudio");
+      audio.volume = 0.5;
+  
+      function playDaMusic() {
+        audio.currentTime = 0;
+        audio.play();
+      }
+  
+      playDaMusic();
+  
+      function musicPlay() {
+        if (audio.currentTime === 0) {
+          playDaMusic();
+        }
+        document.removeEventListener('click', musicPlay);
+      }
+  
+      document.addEventListener('click', musicPlay);
+    })();
+  </script>
+  
+  <div class="dts-text">
+    <p>This is a test message. Hooray!</p>
+  </div>
+</body>
+</html>
