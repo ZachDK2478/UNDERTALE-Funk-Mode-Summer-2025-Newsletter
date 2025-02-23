@@ -200,45 +200,6 @@
         Your browser does not support the audio element.
     </audio>
 
-    <script> /* Background music script. Pauses music when user clicks in a specific place, so they can watch the Twitter embed. */
-        (function () {
-            var audio = document.getElementById("myaudio");
-            var originalVolume = 0.3; // Background music volume
-            audio.volume = originalVolume;
-
-            function playDaMusic() {
-                audio.currentTime = 0;
-                audio.play();
-            }
-
-            playDaMusic();
-
-            function musicPlay() {
-                if (audio.currentTime === 0) {
-                    playDaMusic();
-                }
-                document.removeEventListener('click', musicPlay);
-            }
-
-            document.addEventListener('click', musicPlay);
-
-            // Pause and resume music based on user interaction with the designated area
-            var musicPauseArea = document.getElementById('musicPauseArea');
-
-            musicPauseArea.addEventListener("click", function () {
-                audio.volume = 0; // Mute when clicking in the pause area
-            });
-
-            // Restore music volume when clicking outside the designated area
-            document.addEventListener("click", function (event) {
-                if (!event.target.closest("#musicPauseArea") && !event.target.closest(".tweet-container")) {
-                    audio.volume = originalVolume; // Restore when clicking outside
-                }
-            });
-
-        })();
-    </script>
-
     <div class="san-text">
         <p>&nbsp;</p>
         <p>&nbsp;</p>
@@ -309,6 +270,46 @@
             we’ll be working as efficiently as possible.</p>
         <p>&nbsp;</p>
     </div>
+
+    <script> /* Background music script. Pauses music when user clicks in a specific place, so they can watch the Twitter embed. */
+        (function () {
+            var audio = document.getElementById("myaudio");
+            var originalVolume = 0.3; // Background music volume
+            audio.volume = originalVolume;
+
+            function playDaMusic() {
+                audio.currentTime = 0;
+                audio.play();
+            }
+
+            playDaMusic();
+
+            function musicPlay() {
+                if (audio.currentTime === 0) {
+                    playDaMusic();
+                }
+                document.removeEventListener('click', musicPlay);
+            }
+
+            document.addEventListeneQr('click', musicPlay);
+
+            // Pause and resume music based on user interaction with the designated area
+            var musicPauseArea = document.getElementById('musicPauseArea');
+
+            musicPauseArea.addEventListener("click", function () {
+                audio.volume = 0; // Mute when clicking in the pause area
+            });
+
+            // Restore music volume when clicking outside the designated area
+            document.addEventListener("click", function (event) {
+                if (!event.target.closest("#musicPauseArea") && !event.target.closest(".tweet-container")) {
+                    audio.volume = originalVolume; // Restore when clicking outside
+                }
+            });
+
+        })();
+    </script>
+    
 </body>
 
 </html>
