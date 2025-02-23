@@ -101,6 +101,15 @@
         .tweet-container blockquote {
             max-width: 100%;
         }
+
+        /* Special area for interaction (between "Written by Mod Director Gian" and Twitter embed) */
+        #musicPauseArea {
+            margin: 20px auto;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1); /* Subtle background to highlight area */
+            width: 80%;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -136,12 +145,17 @@
 
             document.addEventListener('click', musicPlay);
 
-            // Detect when user clicks on the Twitter embed
+            // Pause and resume music based on user interaction with the designated area
+            var musicPauseArea = document.getElementById('musicPauseArea');
+
+            musicPauseArea.addEventListener("click", function () {
+                audio.volume = 0; // Mute when clicking in the pause area
+            });
+
+            // Restore music volume when clicking outside the designated area
             document.addEventListener("click", function (event) {
-                if (event.target.closest(".tweet-container")) {
-                    audio.volume = 0; // Mute when clicking Twitter embed
-                } else {
-                    audio.volume = originalVolume; // Restore when clicking anywhere else
+                if (!event.target.closest("#musicPauseArea") && !event.target.closest(".tweet-container")) {
+                    audio.volume = originalVolume; // Restore when clicking outside
                 }
             });
 
@@ -151,6 +165,11 @@
     <div class="san-text">
         <h1>WELCOME TO THE UNDERGROUND!</h1>
         <h2>Written by Mod Director Gian</h2>
+    </div>
+
+    <!-- Area between the text and the Twitter embed where the music should pause when clicked -->
+    <div id="musicPauseArea">
+        Click here to pause the background music
     </div>
 
     <div class="tweet-container">
