@@ -20,6 +20,7 @@
             background-size: cover;
             margin: 0;
             padding: 0;
+            text-align: center; /* Ensures elements inside the body are centered */
         }
 
         p {
@@ -83,14 +84,22 @@
             }
         }
 
-        /* Miscellaneous */
+        /* Centered images */
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        /* Responsive container for Twitter embeds */
         .tweet-container {
             display: flex;
             justify-content: center;
+            margin-top: 20px;
         }
 
-        iframe {
-            pointer-events: auto;
+        .tweet-container blockquote {
+            max-width: 100%;
         }
     </style>
 </head>
@@ -127,7 +136,7 @@
 
             document.addEventListener('click', musicPlay);
 
-            // Detect when user clicks the Twitter embed
+            // Detect when user clicks on the Twitter embed
             document.addEventListener("click", function (event) {
                 if (event.target.closest(".tweet-container")) {
                     audio.volume = 0; // Mute when clicking Twitter embed
