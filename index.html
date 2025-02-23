@@ -30,7 +30,7 @@
             color: white;
         }
 
-        /* FONTS */
+        /* Fonts */
         @font-face {
             font-family: DTS;
             src: url("assets/fonts/determination.ttf") format('truetype');
@@ -60,51 +60,6 @@
             text-align: center;
         }
 
-        /* Background Animation */
-        #soulBG {
-            position: fixed;
-            width: 200%;
-            height: 200%;
-            background-attachment: fixed;
-            background-position: center;
-            background-image: url("assets/images/anim/test-soulslidingbg.png");
-            filter: opacity(0.1);
-            animation: scroll 15s linear infinite forwards;
-            z-index: -9999;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translate(0, -64px);
-            }
-
-            100% {
-                transform: translate(-64px, -192px);
-            }
-        }
-
-        /* Miscellaneous */
-        #logo {
-            display: block;
-            margin: 10px auto;
-            width: 100%;
-            max-width: 1000px;
-            height: auto;
-        }
-
-        img {
-            display: block;
-            margin: 15px auto;
-        }
-
-        @media (orientation: portrait),
-        (max-width: 900px) {
-            body {
-                overflow-x: hidden;
-                text-align: center;
-            }
-        }
-
         .tweet-container {
             display: flex;
             justify-content: center;
@@ -113,13 +68,7 @@
 </head>
 
 <body>
-    <div id="soulBG"></div>
-
-    <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo"
-        title="The official newsletter logo (Spring 2025 edition)">
-
-    <img src="assets/images/little-sprites/gfriend-looker.gif" id="gfriend-lookin" alt="Sprite by Frisbee"
-        title="The silly guys">
+    <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo">
 
     <audio autoplay id="myaudio" loop>
         <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
@@ -129,7 +78,7 @@
     <script>
         (function () {
             var audio = document.getElementById("myaudio");
-            var originalVolume = 0.3; // Adjusted to 30% volume for quieter playback
+            var originalVolume = 0.3; // Lowered background music volume
             audio.volume = originalVolume;
 
             function playDaMusic() {
@@ -148,33 +97,29 @@
 
             document.addEventListener('click', musicPlay);
 
-            // Twitter video volume control
+            // Twitter Embed Video Handling
             function monitorTwitterEmbeds() {
-                var checkEmbeds = setInterval(() => {
-                    var twitterIframes = document.querySelectorAll("iframe.twitter-tweet-rendered");
+                let observer = new MutationObserver(() => {
+                    let twitterIframes = document.querySelectorAll("iframe.twitter-tweet-rendered");
 
                     twitterIframes.forEach(iframe => {
-                        try {
-                            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                            var videos = iframeDoc.querySelectorAll("video");
-
-                            videos.forEach(video => {
-                                video.addEventListener("play", function () {
-                                    audio.volume = 0; // Mute when video plays
-                                });
-
-                                video.addEventListener("pause", function () {
-                                    audio.volume = originalVolume; // Restore volume when paused
-                                });
-
-                                video.addEventListener("ended", function () {
-                                    audio.volume = originalVolume; // Restore when video ends
-                                });
-                            });
-                        } catch (e) {
-                            // Cross-origin restriction may block access
+                        let src = iframe.src || "";
+                        if (src.includes("twitter.com")) {
+                            audio.volume = 0; // Mute music when Twitter embed loads
                         }
                     });
+                });
+
+                observer.observe(document.body, { childList: true, subtree: true });
+
+                setInterval(() => {
+                    let twitterIframes = document.querySelectorAll("iframe.twitter-tweet-rendered");
+
+                    if (twitterIframes.length > 0) {
+                        audio.volume = 0; // If a Twitter iframe exists, lower music
+                    } else {
+                        audio.volume = originalVolume; // Restore volume when no Twitter video is playing
+                    }
                 }, 1000);
             }
 
@@ -185,19 +130,6 @@
     <div class="san-text">
         <h1>WELCOME TO THE UNDERGROUND!</h1>
         <h2>Written by Mod Director Gian</h2>
-    </div>
-
-    <div class="dts-text">
-        <p>Oh man, a newsletter? For an Undertale mod? How had I not thought of that before? Clearly, we are not copying
-            Supreme Leader Toby!!</p>
-        <p>Well, to explain a little— I think the best way to provide updates, news, or teasers for the "UNDERTALE: Funk
-            Mode" mod is through this format.</p>
-        <p>Of course, don't expect this to be super consistent; we'll only post when we have something to show or when
-            we have important development news to share in a more detailed way.</p>
-    </div>
-
-    <div class="san-text">
-        <h1>What IS Undertale: Funk Mode?</h1>
     </div>
 
     <div class="tweet-container">
@@ -216,11 +148,6 @@
         </blockquote> 
     </div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    
-
-    <div class="dts-text">
-        <p>Undertale: Funk Mode is an Undertale FNF mod that stays as faithful as possible to the source material while incorporating unique elements for a fresh experience.</p>
-        <p>The story mirrors the original Undertale, but with adjustments for BF and GF's inclusion.</p>
-    </div>
 
 </body>
 
