@@ -309,13 +309,11 @@
             // Function to handle play on user interaction (click or touch)
             function onUserInteraction() {
                 playDaMusic(); // Play music when user interacts (click/touch)
-                document.removeEventListener('click', onUserInteraction); // Remove listener after playing music
-                document.removeEventListener('touchstart', onUserInteraction); // Remove listener after playing music
             }
 
-            // Listen for the first interaction (click or touch)
-            document.addEventListener('click', onUserInteraction);
-            document.addEventListener('touchstart', onUserInteraction);
+            // Listen for the first interaction (click or touch), using the 'once' option to ensure it only happens once
+            document.addEventListener('click', onUserInteraction, { once: true });
+            document.addEventListener('touchstart', onUserInteraction, { once: true });
 
             // Pause music when clicking in the pause area
             var musicPauseArea = document.getElementById('musicPauseArea');
