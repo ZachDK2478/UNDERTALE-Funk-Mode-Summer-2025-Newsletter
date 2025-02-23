@@ -308,8 +308,16 @@
                 audio.pause(); // Pause the music
             }
     
-            // Play music when the page loads
-            playDaMusic();
+            // Trigger play when user interacts with the page
+            function onUserInteraction() {
+                playDaMusic(); // Play music when user interacts (click/touch)
+                document.removeEventListener('click', onUserInteraction); // Remove listener after playing music
+                document.removeEventListener('touchstart', onUserInteraction); // Remove listener after playing music
+            }
+    
+            // Add event listeners for both click and touchstart (for mobile devices)
+            document.addEventListener('click', onUserInteraction);
+            document.addEventListener('touchstart', onUserInteraction);
     
             // Pause music when clicking in the pause area
             var musicPauseArea = document.getElementById('musicPauseArea');
@@ -325,7 +333,8 @@
             });
     
         })();
-    </script>   
+    </script>
+    
 
 </body>
 
