@@ -50,6 +50,22 @@
             font-style: normal;
         }
 
+        /* Font Face for Crypt Font (used in .crypt-text) */
+        @font-face {
+            font-family: Crypt;
+            src: url("assets/fonts/crypt.ttf") format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Font Face for Papyru Font (used in .papyru-text) */
+        @font-face {
+            font-family: Papyru;
+            src: url("assets/fonts/papyfont.ttf") format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
         /* DTS Text styling */
         .dts-text {
             font-family: DTS;
@@ -58,11 +74,46 @@
             font-size: 30px;
             color: white;
             /* Fixes black text bug */
+            text-align: center;
+            /* Fixes non-centered bug */
         }
 
         /* Sans Text styling */
         .san-text {
             font-family: Sans;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+            color: white;
+            /* Fixes black text bug */
+            text-align: center;
+            /* Fixes non-centered bug */
+        }
+        
+        .crypt-text {
+            font-family: Crypt;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+            color: white;
+            /* Fixes black text bug */
+            text-align: center;
+            /* Fixes non-centered bug */
+        }
+
+        .papyru-text {
+            font-family: Papyru;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+            color: white;
+            /* Fixes black text bug */
+            text-align: center;
+            /* Fixes non-centered bug */
+        }
+
+        .musicPauseArea {
+            font-family: Crypt;
             font-weight: bold;
             font-style: normal;
             font-size: 30px;
