@@ -196,7 +196,7 @@
     <img src="assets/images/little-sprites/gfriend-looker.gif" id="gfriend-lookin" alt="Sprite by Frisbee"
         title="The silly guys">
 
-    <audio autoplay id="myaudio" loop>
+    <audio id="myaudio" loop>
         <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
@@ -289,34 +289,29 @@
         /* Background music script */
         (function () {
             var audio = document.getElementById("myaudio");
-            var originalVolume = 0.3; // Background music volume
             var musicStarted = false; // Flag to track if music has started
 
-            audio.volume = originalVolume;
-
-            // Play the music if it hasn't started
+            // Function to play the music
             function playDaMusic() {
-                if (!musicStarted) {
-                    audio.currentTime = 0; // Start from the beginning
-                    audio.play();
-                    musicStarted = true; // Mark music as started
-                }
+                if (!audio.paused) return; // If the music is already playing, do nothing
+                audio.currentTime = 0; // Start from the beginning
+                audio.play();
             }
 
-            // Pause the music
+            // Function to pause the music
             function pauseDaMusic() {
                 audio.pause(); // Pause the music
             }
 
-            // Function to handle play on first user interaction
+            // Function to handle the first user interaction (click or touch)
             function onUserInteraction() {
-                playDaMusic(); // Play the music on first click or touch
-                // Remove listeners after the first interaction
+                playDaMusic(); // Play music on first click or touch
+                // Remove event listeners after the first interaction
                 document.removeEventListener('click', onUserInteraction);
                 document.removeEventListener('touchstart', onUserInteraction);
             }
 
-            // Add event listeners for first user interaction
+            // Listen for the first user interaction (click or touch)
             document.addEventListener('click', onUserInteraction);
             document.addEventListener('touchstart', onUserInteraction);
 
@@ -329,7 +324,6 @@
             // Play music when clicking the play area
             var musicPlayArea = document.getElementById('musicPlayArea');
             musicPlayArea.addEventListener("click", function () {
-                audio.volume = originalVolume; // Restore volume
                 playDaMusic(); // Play music again when clicking the play button
             });
 
