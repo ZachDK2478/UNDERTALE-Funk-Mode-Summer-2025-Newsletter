@@ -286,7 +286,7 @@
     </div>
 
     <script>
-        /* Background music script. Pauses music when user clicks in a specific place, so they can watch the Twitter embed. */
+        /* Background music script */
         (function () {
             var audio = document.getElementById("myaudio");
             var originalVolume = 0.3; // Background music volume
@@ -294,34 +294,39 @@
 
             audio.volume = originalVolume;
 
+            // Play the music if it hasn't started
             function playDaMusic() {
-                if (!musicStarted) { // Only play music if it hasn't already started
+                if (!musicStarted) {
                     audio.currentTime = 0; // Start from the beginning
                     audio.play();
-                    musicStarted = true; // Mark that the music has started
+                    musicStarted = true; // Mark music as started
                 }
             }
 
+            // Pause the music
             function pauseDaMusic() {
                 audio.pause(); // Pause the music
             }
 
-            // Function to handle play on user interaction (click or touch)
+            // Function to handle play on first user interaction
             function onUserInteraction() {
-                playDaMusic(); // Play music when user interacts (click/touch)
+                playDaMusic(); // Play the music on first click or touch
+                // Remove listeners after the first interaction
+                document.removeEventListener('click', onUserInteraction);
+                document.removeEventListener('touchstart', onUserInteraction);
             }
 
-            // Listen for the first interaction (click or touch), using the 'once' option to ensure it only happens once
-            document.addEventListener('click', onUserInteraction, { once: true });
-            document.addEventListener('touchstart', onUserInteraction, { once: true });
+            // Add event listeners for first user interaction
+            document.addEventListener('click', onUserInteraction);
+            document.addEventListener('touchstart', onUserInteraction);
 
-            // Pause music when clicking in the pause area
+            // Pause music when clicking the pause area
             var musicPauseArea = document.getElementById('musicPauseArea');
             musicPauseArea.addEventListener("click", function () {
                 pauseDaMusic(); // Pause music when clicking the pause button
             });
 
-            // Play music when clicking in the play area
+            // Play music when clicking the play area
             var musicPlayArea = document.getElementById('musicPlayArea');
             musicPlayArea.addEventListener("click", function () {
                 audio.volume = originalVolume; // Restore volume
