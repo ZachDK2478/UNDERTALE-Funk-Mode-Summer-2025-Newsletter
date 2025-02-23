@@ -30,7 +30,7 @@
             color: white;
         }
 
-        /* Fonts */
+        /* FONTS */
         @font-face {
             font-family: DTS;
             src: url("assets/fonts/determination.ttf") format('truetype');
@@ -60,6 +60,30 @@
             text-align: center;
         }
 
+        /* Background Animation */
+        #soulBG {
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            background-attachment: fixed;
+            background-position: center;
+            background-image: url("assets/images/anim/test-soulslidingbg.png");
+            filter: opacity(0.1);
+            animation: scroll 15s linear infinite forwards;
+            z-index: -9999;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translate(0, -64px);
+            }
+
+            100% {
+                transform: translate(-64px, -192px);
+            }
+        }
+
+        /* Miscellaneous */
         .tweet-container {
             display: flex;
             justify-content: center;
@@ -68,6 +92,8 @@
 </head>
 
 <body>
+    <div id="soulBG"></div>
+
     <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo">
 
     <audio autoplay id="myaudio" loop>
@@ -99,28 +125,19 @@
 
             // Twitter Embed Video Handling
             function monitorTwitterEmbeds() {
+                let tweetContainer = document.querySelector(".tweet-container");
+
                 let observer = new MutationObserver(() => {
                     let twitterIframes = document.querySelectorAll("iframe.twitter-tweet-rendered");
 
-                    twitterIframes.forEach(iframe => {
-                        let src = iframe.src || "";
-                        if (src.includes("twitter.com")) {
-                            audio.volume = 0; // Mute music when Twitter embed loads
-                        }
-                    });
+                    if (twitterIframes.length > 0) {
+                        audio.volume = 0; // Mute when Twitter video is present
+                    } else {
+                        audio.volume = originalVolume; // Restore volume when no Twitter video is active
+                    }
                 });
 
-                observer.observe(document.body, { childList: true, subtree: true });
-
-                setInterval(() => {
-                    let twitterIframes = document.querySelectorAll("iframe.twitter-tweet-rendered");
-
-                    if (twitterIframes.length > 0) {
-                        audio.volume = 0; // If a Twitter iframe exists, lower music
-                    } else {
-                        audio.volume = originalVolume; // Restore volume when no Twitter video is playing
-                    }
-                }, 1000);
+                observer.observe(tweetContainer, { childList: true, subtree: true });
             }
 
             window.onload = monitorTwitterEmbeds;
