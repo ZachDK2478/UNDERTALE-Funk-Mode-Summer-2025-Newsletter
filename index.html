@@ -88,6 +88,10 @@
             display: flex;
             justify-content: center;
         }
+
+        iframe {
+            pointer-events: auto;
+        }
     </style>
 </head>
 
@@ -104,7 +108,7 @@
     <script>
         (function () {
             var audio = document.getElementById("myaudio");
-            var originalVolume = 0.3; // Lowered background music volume
+            var originalVolume = 0.3; // Background music volume
             audio.volume = originalVolume;
 
             function playDaMusic() {
@@ -123,24 +127,26 @@
 
             document.addEventListener('click', musicPlay);
 
-            // Twitter Embed Video Handling
+            // Detect when user interacts with the Twitter embed
             function monitorTwitterEmbeds() {
-                let tweetContainer = document.querySelector(".tweet-container");
+                let twitterIframes = document.querySelectorAll("iframe.twitter-tweet-rendered");
 
-                let observer = new MutationObserver(() => {
-                    let twitterIframes = document.querySelectorAll("iframe.twitter-tweet-rendered");
-
-                    if (twitterIframes.length > 0) {
-                        audio.volume = 0; // Mute when Twitter video is present
-                    } else {
-                        audio.volume = originalVolume; // Restore volume when no Twitter video is active
-                    }
+                twitterIframes.forEach(iframe => {
+                    iframe.addEventListener("mouseenter", function () {
+                        audio.volume = 0; // Mute when user interacts with iframe
+                    });
                 });
 
-                observer.observe(tweetContainer, { childList: true, subtree: true });
+                // Restore music when user clicks outside the Twitter embed
+                document.addEventListener("click", function (event) {
+                    if (!event.target.closest(".tweet-container")) {
+                        audio.volume = originalVolume; // Restore music when clicking outside iframe
+                    }
+                });
             }
 
-            window.onload = monitorTwitterEmbeds;
+            // Wait for Twitter embeds to load
+            setTimeout(monitorTwitterEmbeds, 3000);
         })();
     </script>
 
