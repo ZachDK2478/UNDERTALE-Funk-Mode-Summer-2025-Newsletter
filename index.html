@@ -13,6 +13,8 @@
 
     <style>
         /* Global Styles */
+
+        /* TEXT */
         body {
             background-color: black;
             background-attachment: fixed;
@@ -20,7 +22,6 @@
             background-size: cover;
             margin: 0;
             padding: 0;
-            text-align: center; /* Ensures elements inside the body are centered */
         }
 
         p {
@@ -32,6 +33,8 @@
         }
 
         /* FONTS */
+
+        /* Font Face for DTS (used in .dts-text) */
         @font-face {
             font-family: DTS;
             src: url("assets/fonts/determination.ttf") format('truetype');
@@ -39,6 +42,7 @@
             font-style: normal;
         }
 
+        /* Font Face for Sans Font (used in .san-text) */
         @font-face {
             font-family: Sans;
             src: url("assets/fonts/sansfont.ttf") format('truetype');
@@ -46,19 +50,26 @@
             font-style: normal;
         }
 
+        /* DTS Text styling */
         .dts-text {
             font-family: DTS;
             font-weight: bold;
+            font-style: normal;
             font-size: 30px;
             color: white;
+            /* Fixes black text bug */
         }
 
+        /* Sans Text styling */
         .san-text {
             font-family: Sans;
             font-weight: bold;
+            font-style: normal;
             font-size: 30px;
             color: white;
+            /* Fixes black text bug */
             text-align: center;
+            /* Fixes non-centered bug */
         }
 
         /* Background Animation */
@@ -66,6 +77,7 @@
             position: fixed;
             width: 200%;
             height: 200%;
+            display: flex;
             background-attachment: fixed;
             background-position: center;
             background-image: url("assets/images/anim/test-soulslidingbg.png");
@@ -84,11 +96,33 @@
             }
         }
 
-        /* Centered images */
+        /* Miscellaneous */
+        /* Logo Styles */
+        #logo {
+            display: block;
+            margin: 10px auto;
+            width: 100%;
+            /* Adjust width to be a percentage of the container */
+            max-width: 1000px;
+            /* Ensures it doesn't get too big on larger screens */
+            height: auto;
+            /* Maintains the aspect ratio */
+        }
+
+
+        /* Center images with proper spacing */
         img {
             display: block;
-            margin: 0 auto;
-            max-width: 100%;
+            margin: 15px auto;
+        }
+
+        /* Responsive adjustments for mobile devices */
+        @media (orientation: portrait),
+        (max-width: 900px) {
+            body {
+                overflow-x: hidden;
+                text-align: center;
+            }
         }
 
         /* Responsive container for Twitter embeds */
@@ -110,20 +144,25 @@
             width: 80%;
             cursor: pointer;
         }
+        
     </style>
 </head>
 
 <body>
     <div id="soulBG"></div>
 
-    <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo">
+    <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo"
+        title="The official newsletter logo (Spring 2025 edition)">
+
+    <img src="assets/images/little-sprites/gfriend-looker.gif" id="gfriend-lookin" alt="Sprite by Frisbee"
+        title="The silly guys">
 
     <audio autoplay id="myaudio" loop>
         <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
-
-    <script>
+    
+    <script> /* Background music script. Pauses music when user clicks in a specific place, so they can watch the Twitter embed. */
         (function () {
             var audio = document.getElementById("myaudio");
             var originalVolume = 0.3; // Background music volume
@@ -163,10 +202,31 @@
     </script>
 
     <div class="san-text">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
         <h1>WELCOME TO THE UNDERGROUND!</h1>
         <h2>Written by Mod Director Gian</h2>
     </div>
-
+    <p>&nbsp;</p>
+    <div class="dts-text">
+        <p>Oh man, a newsletter? For an Undertale mod? How had I not thought of that before? Clearly, we are not copying
+            Supreme Leader Toby!!</p>
+        <p>&nbsp;</p>
+        <p>Well, to explain a little— I think the best way to provide updates, news, or teasers for the "UNDERTALE: Funk
+            Mode" mod is through this format.</p>
+        <p>&nbsp;</p>
+        <p>Of course, don't expect this to be super consistent; we'll only post when we have something to show or when
+            we have important development news to share in a more detailed way. That is, of course, if we don’t forget
+            that this site exists!</p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="san-text">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h1>What IS Undertale: Funk Mode?</h1>
+    </div>
     <!-- Area between the text and the Twitter embed where the music should pause when clicked -->
     <div id="musicPauseArea">
         Click here to pause the background music
@@ -187,8 +247,26 @@
             <a href="https://twitter.com/JustGian012/status/1886578802416890071?ref_src=twsrc%5Etfw">February 4, 2025</a>
         </blockquote> 
     </div>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    
-
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
+    <div class="dts-text">
+        <p>In simple terms, Undertale: Funk Mode is yet another Undertale FNF mod in a long line of them that aims to
+            remain as faithful as possible to the source material while making the most of everything Undertale has to
+            offer.</p>
+        <p>&nbsp;</p>
+        <p>The story will be largely the same as the original Undertale, but with slight changes to give it a fresh feel
+            and to adapt it for BF and GF's inclusion.</p>
+        <p>&nbsp;</p>
+        <p>Additionally, we’re adding small, unique elements to make the
+            gameplay a bit more entertaining for the player!</p>
+        <p>&nbsp;</p>
+        <p>There really isn’t much surprise here—it’s just Undertale,
+            but what if, ermmm, BF and GF were part of that universe and Frisk didn’t exist?</p>
+        <p>&nbsp;</p>
+        <p>We have many plans and ideas for this project, since in some ways we want it to be a "love letter" to the
+            Undertale community, if you want to see it that way. Still, projects like this are very time-consuming, so
+            we’ll be working as efficiently as possible.</p>
+        <p>&nbsp;</p>
+    </div>
 </body>
 
 </html>
