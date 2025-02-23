@@ -296,6 +296,7 @@
                 if (!audio.paused) return; // If the music is already playing, do nothing
                 audio.currentTime = 0; // Start from the beginning
                 audio.play();
+                audio.volume = 0.3; // Set volume to 30%
             }
 
             // Function to pause the music
