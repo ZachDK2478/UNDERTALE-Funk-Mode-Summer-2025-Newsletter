@@ -290,11 +290,16 @@
         (function () {
             var audio = document.getElementById("myaudio");
             var originalVolume = 0.3; // Background music volume
+            var musicStarted = false; // Flag to track if music has started
+
             audio.volume = originalVolume;
 
             function playDaMusic() {
-                audio.currentTime = 0; // Start from the beginning
-                audio.play();
+                if (!musicStarted) { // Only play music if it hasn't already started
+                    audio.currentTime = 0; // Start from the beginning
+                    audio.play();
+                    musicStarted = true; // Mark that the music has started
+                }
             }
 
             function pauseDaMusic() {
@@ -305,6 +310,7 @@
             function onUserInteraction() {
                 playDaMusic(); // Play music when user interacts (click/touch)
                 document.removeEventListener('click', onUserInteraction); // Remove listener after playing music
+                document.removeEventListener('touchstart', onUserInteraction); // Remove listener after playing music
             }
 
             // Listen for the first interaction (click or touch)
@@ -323,6 +329,7 @@
                 audio.volume = originalVolume; // Restore volume
                 playDaMusic(); // Play music again when clicking the play button
             });
+
         })();
     </script>
     
