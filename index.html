@@ -127,26 +127,15 @@
 
             document.addEventListener('click', musicPlay);
 
-            // Detect when user interacts with the Twitter embed
-            function monitorTwitterEmbeds() {
-                let twitterIframes = document.querySelectorAll("iframe.twitter-tweet-rendered");
+            // Detect when user clicks the Twitter embed
+            document.addEventListener("click", function (event) {
+                if (event.target.closest(".tweet-container")) {
+                    audio.volume = 0; // Mute when clicking Twitter embed
+                } else {
+                    audio.volume = originalVolume; // Restore when clicking anywhere else
+                }
+            });
 
-                twitterIframes.forEach(iframe => {
-                    iframe.addEventListener("mouseenter", function () {
-                        audio.volume = 0; // Mute when user interacts with iframe
-                    });
-                });
-
-                // Restore music when user clicks outside the Twitter embed
-                document.addEventListener("click", function (event) {
-                    if (!event.target.closest(".tweet-container")) {
-                        audio.volume = originalVolume; // Restore music when clicking outside iframe
-                    }
-                });
-            }
-
-            // Wait for Twitter embeds to load
-            setTimeout(monitorTwitterEmbeds, 3000);
         })();
     </script>
 
