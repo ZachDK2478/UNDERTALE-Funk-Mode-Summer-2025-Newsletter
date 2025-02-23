@@ -226,7 +226,7 @@
         <p>&nbsp;</p>
         <h1>What IS Undertale: Funk Mode?</h1>
     </div>
-    
+
     <!-- Area between the text and the Twitter embed where the music should pause when clicked -->
     <div id="musicPauseArea" class="crypt-text">
         Click here to pause the background music
@@ -250,6 +250,9 @@
                 2025</a>
         </blockquote>
     </div>
+    <div id="musicPlayArea" class="crypt-text">
+        Click here to play the background music
+    </div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <div class="dts-text">
         <p>In simple terms, Undertale: Funk Mode is yet another Undertale FNF mod in a long line of them that aims to
@@ -271,7 +274,8 @@
         <p>&nbsp;</p>
     </div>
 
-    <script> /* Background music script. Pauses music when user clicks in a specific place, so they can watch the Twitter embed. */
+    <script>
+        /* Background music script. Pauses music when user clicks in a specific place, so they can watch the Twitter embed. */
         (function () {
             var audio = document.getElementById("myaudio");
             var originalVolume = 0.3; // Background music volume
@@ -282,33 +286,44 @@
                 audio.play();
             }
 
+            // Play music by default when page loads
             playDaMusic();
 
+            // Function to handle play/pause logic
             function musicPlay() {
-                if (audio.currentTime === 0) {
-                    playDaMusic();
+                if (audio.paused) {
+                    playDaMusic(); // Play music if paused
+                } else {
+                    audio.pause(); // Pause music if it's playing
                 }
-                document.removeEventListener('click', musicPlay);
             }
 
+            // Add click listener to play/pause music
             document.addEventListener('click', musicPlay);
 
-            // Pause and resume music based on user interaction with the designated area
+            // Pause music when clicking in the pause area
             var musicPauseArea = document.getElementById('musicPauseArea');
-
             musicPauseArea.addEventListener("click", function () {
-                audio.volume = 0; // Mute when clicking in the pause area
+                audio.pause(); // Pause music when clicking in the pause area
             });
 
-            // Restore music volume when clicking outside the designated area
+            // Resume music when clicking in the play area
+            var musicPlayArea = document.getElementById('musicPlayArea');
+            musicPlayArea.addEventListener("click", function () {
+                audio.volume = originalVolume; // Restore volume
+                playDaMusic(); // Play music again when clicking in the play area
+            });
+
+            // Restore music volume when clicking outside the designated area (outside the tweet and music pause/play areas)
             document.addEventListener("click", function (event) {
-                if (!event.target.closest("#musicPauseArea") && !event.target.closest(".tweet-container")) {
-                    audio.volume = originalVolume; // Restore when clicking outside
+                if (!event.target.closest("#musicPauseArea") && !event.target.closest(".tweet-container") && !event.target.closest("#musicPlayArea")) {
+                    audio.volume = originalVolume; // Restore volume when clicking outside
                 }
             });
 
         })();
     </script>
+
 
 </body>
 
