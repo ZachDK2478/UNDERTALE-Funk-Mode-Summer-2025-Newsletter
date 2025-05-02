@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="description"
+        content="The official website for the UNDERTALE: Funk Mode 2025 Spring Newsletter. We hope you enjoy!">
+    <meta name="keywords" content="UNDERTALE, Funk-Mode, UTFM, FNF, Mod">
+    <title>Happy Spring!</title>
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://raw.githubusercontent.com/ZachDK2478/UNDERTALE-Funk-Mode/refs/heads/main/images/favicon/utfm-perseverance.ico">
+
+    <style>
+        /* Global Styles */
+
+        /* TEXT */
+        body {
+            background-color: black;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            max-width: 850px;
+            word-wrap: break-word;
+            margin: auto;
+            text-align: center;
+            color: white;
+        }
+
+        /* FONTS */
+
+        /* Font Face for DTS (used in .dts-text) */
+        @font-face {
+            font-family: DTS;
+            src: url("assets/fonts/determination.ttf") format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Font Face for Sans Font (used in .san-text) */
+        @font-face {
+            font-family: Sans;
+            src: url("assets/fonts/sansfont.ttf") format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Font Face for Crypt Font (used in .crypt-text) */
+        @font-face {
+            font-family: Crypt;
+            src: url("assets/fonts/crypt.ttf") format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Font Face for Papyru Font (used in .papyru-text) */
+        @font-face {
+            font-family: Papyru;
+            src: url("assets/fonts/papyfont.ttf") format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* DTS Text styling */
+        .dts-text {
+            font-family: DTS;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 25px;
+            color: white;
+            /* Fixes black text bug */
+            text-align: center;
+            /* Fixes non-centered bug */
+        }
+
+        /* Sans Text styling */
+        .san-text {
+            font-family: Sans;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 25px;
+            color: white;
+            /* Fixes black text bug */
+            text-align: center;
+            /* Fixes non-centered bug */
+        }
+
+        .crypt-text {
+            font-family: Crypt;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 16px;
+            color: white;
+            /* Fixes black text bug */
+            text-align: center;
+            /* Fixes non-centered bug */
+        }
+
+        .papyru-text {
+            font-family: Papyru;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 20px;
+            color: white;
+            /* Fixes black text bug */
+            text-align: center;
+            /* Fixes non-centered bug */
+        }
+
+        /* Background Animation */
+        #soulBG {
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            display: flex;
+            background-attachment: fixed;
+            background-position: center;
+            background-image: url("assets/images/anim/test-soulslidingbg.png");
+            filter: opacity(0.1);
+            animation: scroll 15s linear infinite forwards;
+            z-index: -9999;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translate(0, -64px);
+            }
+
+            100% {
+                transform: translate(-64px, -192px);
+            }
+        }
+
+        /* Miscellaneous */
+        /* Logo Styles */
+        #logo {
+            display: block;
+            margin: 10px auto;
+            width: 100%;
+            /* Adjust width to be a percentage of the container */
+            max-width: 1000px;
+            /* Ensures it doesn't get too big on larger screens */
+            height: auto;
+            /* Maintains the aspect ratio */
+        }
+
+
+        /* Center images with proper spacing */
+        img {
+            display: block;
+            margin: 15px auto;
+        }
+
+        /* Responsive adjustments for mobile devices */
+        @media (orientation: portrait),
+        (max-width: 900px) {
+            body {
+                overflow-x: hidden;
+                text-align: center;
+            }
+        }
+
+        /* Responsive container for Twitter embeds */
+        .tweet-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tweet-container blockquote {
+            max-width: 100%;
+        }
+
+        /* Special area for interaction (between "Written by Mod Director Gian" and Twitter embed) */
+        #musicPauseArea,
+        #musicPlayArea {
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="soulBG"></div>
+
+    <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo"
+        title="The official newsletter logo (Spring 2025 edition)">
+
+    <img src="assets/images/little-sprites/gfriend-looker.gif" id="gfriend-lookin" alt="Sprite by Frisbee"
+        title="The silly guys">
+
+    <audio id="myaudio" loop>
+        <source src="assets/audio/music/Newsletter-Menu-Concept-zdk.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="san-text">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h1>WELCOME TO THE UNDERGROUND!</h1>
+        <h2>Written by Mod Director Gian</h2>
+    </div>
+    <p>&nbsp;</p>
+    <div class="dts-text">
+        <p>Oh man, a newsletter? For an Undertale mod? How had I not thought of that before? Clearly, we are not copying
+            Supreme Leader Toby!!</p>
+        <p>&nbsp;</p>
+        <p>Well, to explain a little— I think the best way to provide updates, news, or teasers for the "UNDERTALE: Funk
+            Mode" mod is through this format.</p>
+        <p>&nbsp;</p>
+        <p>Of course, don't expect this to be super consistent; we'll only post when we have something to show or when
+            we have important development news to share in a more detailed way. That is, of course, if we don’t forget
+            that this site exists!</p>
+        <p>&nbsp;</p>
+    </div>
+    <div class="san-text">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h1>What IS Undertale: Funk Mode?</h1>
+    </div>
+
+    <!-- Area between the text and the Twitter embed where the music should pause when clicked -->
+    <div id="musicPauseArea" class="crypt-text">
+        Click here to pause the background music
+    </div>
+
+    <div class="tweet-container">
+        <blockquote class="twitter-tweet" data-theme="dark">
+            <p lang="en" dir="ltr">
+                last undertale funk mode teaser<br>
+                at least for a while because I'm too lazy to post more and as a thank you for the good comments I
+                received :)<br><br>
+                credits below<a href="https://twitter.com/hashtag/FNF?src=hash&amp;ref_src=twsrc%5Etfw">#FNF</a>
+                <a href="https://twitter.com/hashtag/Undertale?src=hash&amp;ref_src=twsrc%5Etfw">#Undertale</a>
+                <a
+                    href="https://twitter.com/hashtag/fridaynightfunkin?src=hash&amp;ref_src=twsrc%5Etfw">#fridaynightfunkin</a>
+                <a href="https://twitter.com/hashtag/UTfunk?src=hash&amp;ref_src=twsrc%5Etfw">#UTfunk</a>
+                <a href="https://t.co/906M9mlCC9">pic.twitter.com/906M9mlCC9</a>
+            </p>
+            &mdash; Gian (@JustGian012)
+            <a href="https://twitter.com/JustGian012/status/1886578802416890071?ref_src=twsrc%5Etfw">February 4,
+                2025</a>
+        </blockquote>
+    </div>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <div class="san-text">
+        <h1></h1>
+    </div>
+
+    <div id="musicPlayArea" class="crypt-text">
+        Click here to play the background music
+    </div>
+
+    <div class="san-text">
+        <h1></h1>
+    </div>
+
+    <div class="dts-text">
+        <p>In simple terms, Undertale: Funk Mode is yet another Undertale FNF mod in a long line of them that aims to
+            remain as faithful as possible to the source material while making the most of everything Undertale has to
+            offer.</p>
+        <p>&nbsp;</p>
+        <p>The story will be largely the same as the original Undertale, but with slight changes to give it a fresh feel
+            and to adapt it for BF and GF's inclusion.</p>
+        <p>&nbsp;</p>
+        <p>Additionally, we’re adding small, unique elements to make the
+            gameplay a bit more entertaining for the player!</p>
+        <p>&nbsp;</p>
+        <p>There really isn’t much surprise here—it’s just Undertale,
+            but what if, ermmm, BF and GF were part of that universe and Frisk didn’t exist?</p>
+        <p>&nbsp;</p>
+        <p>We have many plans and ideas for this project, since in some ways we want it to be a "love letter" to the
+            Undertale community, if you want to see it that way. Still, projects like this are very time-consuming, so
+            we’ll be working as efficiently as possible.</p>
+        <p>&nbsp;</p>
+    </div>
+
+    <div class="san-text">
+        <h1>Collect my trailers</h1>
+        <h2>Written by Mod Director Gian</h2>
+    </div>
+
+    <div class="dts-text">
+        <p>UNDERTALE: Funk-Mode has had a few trailers come out over it's lifespan which show a little bit of what it
+            will have to offer.</p>
+        <p>&nbsp;</p>
+        <p>I honestly think they hold up extremely well as of now, because the first trailer is a fitting introduction
+            to the game, giving you some insight as to what it's all about.</p>
+        <p>&nbsp;</p>
+        <p>While the second one shows the gameplay, the songs, and what the game will most likely look like.</p>
+        <p>&nbsp;</p>
+    </div>
+
+    <div class="san-text">
+        <h1></h1>
+    </div>
+
+    <div class="tweet-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JD6YXdHVSAY?si=JDgxFIvPnwOF6Y4P"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="tweet-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6XD1vBZzIW8?si=r3vZZDcOH_UjOLGk"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="san-text">
+        <h1></h1>
+    </div>
+
+    <script>
+        /* Background music script */
+        (function () {
+            var audio = document.getElementById("myaudio");
+            var musicStarted = false; // Flag to track if music has started
+
+            // Function to play the music
+            function playDaMusic() {
+                if (!audio.paused) return; // If the music is already playing, do nothing
+                audio.currentTime = 0; // Start from the beginning
+                audio.play();
+                audio.volume = 0.3; // Set volume to 30%
+            }
+
+            // Function to pause the music
+            function pauseDaMusic() {
+                audio.pause(); // Pause the music
+            }
+
+            // Function to handle the first user interaction (click or touch)
+            function onUserInteraction() {
+                playDaMusic(); // Play music on first click or touch
+                // Remove event listeners after the first interaction
+                document.removeEventListener('click', onUserInteraction);
+                document.removeEventListener('touchstart', onUserInteraction);
+            }
+
+            // Listen for the first user interaction (click or touch)
+            document.addEventListener('click', onUserInteraction);
+            document.addEventListener('touchstart', onUserInteraction);
+
+            // Pause music when clicking the pause area
+            var musicPauseArea = document.getElementById('musicPauseArea');
+            musicPauseArea.addEventListener("click", function () {
+                pauseDaMusic(); // Pause music when clicking the pause button
+            });
+
+            // Play music when clicking the play area
+            var musicPlayArea = document.getElementById('musicPlayArea');
+            musicPlayArea.addEventListener("click", function () {
+                playDaMusic(); // Play music again when clicking the play button
+            });
+
+        })();
+    </script>
+
+</body>
+
+</html>
