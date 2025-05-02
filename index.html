@@ -201,9 +201,6 @@
         Your browser does not support the audio element.
     </audio>
 
-    <div class="san-text">
-        <p>&nbsp;</p>
-
     <div id="musicPlayArea" class="crypt-text">
         Click here to play the background music
     </div>
@@ -212,51 +209,54 @@
         Click here to pause the background music
     </div>
 
-    <script>
-        /* Background music script */
-        (function () {
-            var audio = document.getElementById("myaudio");
-            var musicStarted = false; // Flag to track if music has started
+    <div class="san-text">
+        <h1></h1>
 
-            // Function to play the music
-            function playDaMusic() {
-                if (!audio.paused) return; // If the music is already playing, do nothing
-                audio.currentTime = 0; // Start from the beginning
-                audio.play();
-                audio.volume = 0.3; // Set volume to 30%
-            }
+<script>
+    /* Background music script */
+    (function () {
+        var audio = document.getElementById("myaudio");
+        var musicStarted = false; // Flag to track if music has started
 
-            // Function to pause the music
-            function pauseDaMusic() {
-                audio.pause(); // Pause the music
-            }
+        // Function to play the music
+        function playDaMusic() {
+            if (!audio.paused) return; // If the music is already playing, do nothing
+            audio.currentTime = 0; // Start from the beginning
+            audio.play();
+            audio.volume = 0.3; // Set volume to 30%
+        }
 
-            // Function to handle the first user interaction (click or touch)
-            function onUserInteraction() {
-                playDaMusic(); // Play music on first click or touch
-                // Remove event listeners after the first interaction
-                document.removeEventListener('click', onUserInteraction);
-                document.removeEventListener('touchstart', onUserInteraction);
-            }
+        // Function to pause the music
+        function pauseDaMusic() {
+            audio.pause(); // Pause the music
+        }
 
-            // Listen for the first user interaction (click or touch)
-            document.addEventListener('click', onUserInteraction);
-            document.addEventListener('touchstart', onUserInteraction);
+        // Function to handle the first user interaction (click or touch)
+        function onUserInteraction() {
+            playDaMusic(); // Play music on first click or touch
+            // Remove event listeners after the first interaction
+            document.removeEventListener('click', onUserInteraction);
+            document.removeEventListener('touchstart', onUserInteraction);
+        }
 
-            // Pause music when clicking the pause area
-            var musicPauseArea = document.getElementById('musicPauseArea');
-            musicPauseArea.addEventListener("click", function () {
-                pauseDaMusic(); // Pause music when clicking the pause button
-            });
+        // Listen for the first user interaction (click or touch)
+        document.addEventListener('click', onUserInteraction);
+        document.addEventListener('touchstart', onUserInteraction);
 
-            // Play music when clicking the play area
-            var musicPlayArea = document.getElementById('musicPlayArea');
-            musicPlayArea.addEventListener("click", function () {
-                playDaMusic(); // Play music again when clicking the play button
-            });
+        // Pause music when clicking the pause area
+        var musicPauseArea = document.getElementById('musicPauseArea');
+        musicPauseArea.addEventListener("click", function () {
+            pauseDaMusic(); // Pause music when clicking the pause button
+        });
 
-        })();
-    </script>
+        // Play music when clicking the play area
+        var musicPlayArea = document.getElementById('musicPlayArea');
+        musicPlayArea.addEventListener("click", function () {
+            playDaMusic(); // Play music again when clicking the play button
+        });
+
+    })();
+</script>
 
 </body>
 
