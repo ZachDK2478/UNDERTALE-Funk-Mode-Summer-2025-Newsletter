@@ -209,54 +209,134 @@
         Click here to pause the background music
     </div>
 
-    <div class="san-text">
-        <h1></h1>
+    <div class="dts-text">
+        <h2>The State of the OST</h2>
+        <h3>Written by one of the lead composers, ZachDK</h3>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>Well, here it is! The OST discussion.</p>
+        <p>&nbsp;</p>
+        <p>Music is one of the most important parts of a Friday Night Funkin' mod. Shocker, I know. But I'm glad to say
+            that Undertale: Funk-Mode is in good hands.</p>
+        <p>&nbsp;</p> 
+        <p>The team has four lead composers. Me, GontheGhost, Spunky Tunky, and Soba Noodles. We, alongside many of the other composers, have been working very hard to contribute to this mod and make it's OST the best it can be.</p>
+        <p>&nbsp;</p>
+        <p>I'm very proud of our work, and we can't wait to get all of this out to you. Undertale: Funk-Mode has really
+            been a wonderful experience to work on. I've learned and improved with each passing day, working on this
+            mod. I hope you guys learn and improve as well, in your own personal projects.</p> 
+        <p>&nbsp;</p>
+        <p>It's thanks to you all that
+            we can even make this mod!</p>
+        <p>&nbsp;</p>
+        <p>Here are some of the songs we've been given permission to show you.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        
+        <h2>SONG TEASER 1</h2>
+        <h3>???</h3>
+        <h4>By ZachDK, SobaNoodles, & GontheGhost</h4>
 
-<script>
-    /* Background music script */
-    (function () {
-        var audio = document.getElementById("myaudio");
-        var musicStarted = false; // Flag to track if music has started
+        <audio controls>
+            <source src="assets/audio/music/songteaser1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        
+        <h2>SONG TEASER 2</h2>
+        <h3>Snowdin Town Snippet</h3>
+        <h4>By ZachDK</h4>
+        
+        <audio controls>
+            <source src="assets/audio/music/songteaser2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-        // Function to play the music
-        function playDaMusic() {
-            if (!audio.paused) return; // If the music is already playing, do nothing
-            audio.currentTime = 0; // Start from the beginning
-            audio.play();
-            audio.volume = 0.3; // Set volume to 30%
-        }
+        <h2>SONG TEASER 3</h2>
+        <h3>Laughable Humor Snippet</h3>
+        <h4>By Spunky Tunky</h4>
+        
+        <audio controls>
+            <source src="assets/audio/music/songteaser3.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-        // Function to pause the music
-        function pauseDaMusic() {
-            audio.pause(); // Pause the music
-        }
+        <h2>SONG TEASER 4</h2>
+        <h3>Ghostly Encounter v2 Snippet</h3>
+        <h4>By GontheGhost ft. ZachDK</h4>
+        
+        <audio controls>
+            <source src="assets/audio/music/songteaser4.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        
+        <p>And with that, I think that concludes the OST discussion for now. We're grateful for all of the kindness you've shown us, and for your continued dedication to the mod. We're trying our best to make the best music for you guys. We hope you love the OST once it's all out there!</p>
 
-        // Function to handle the first user interaction (click or touch)
-        function onUserInteraction() {
-            playDaMusic(); // Play music on first click or touch
-            // Remove event listeners after the first interaction
-            document.removeEventListener('click', onUserInteraction);
-            document.removeEventListener('touchstart', onUserInteraction);
-        }
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
-        // Listen for the first user interaction (click or touch)
-        document.addEventListener('click', onUserInteraction);
-        document.addEventListener('touchstart', onUserInteraction);
+        <script>
+            /* Background music script */
+            (function () {
+                var audio = document.getElementById("myaudio");
+                var musicStarted = false; // Flag to track if music has started
 
-        // Pause music when clicking the pause area
-        var musicPauseArea = document.getElementById('musicPauseArea');
-        musicPauseArea.addEventListener("click", function () {
-            pauseDaMusic(); // Pause music when clicking the pause button
-        });
+                // Function to play the music
+                function playDaMusic() {
+                    if (!audio.paused) return; // If the music is already playing, do nothing
+                    audio.currentTime = 0; // Start from the beginning
+                    audio.play();
+                    audio.volume = 0.3; // Set volume to 30%
+                }
 
-        // Play music when clicking the play area
-        var musicPlayArea = document.getElementById('musicPlayArea');
-        musicPlayArea.addEventListener("click", function () {
-            playDaMusic(); // Play music again when clicking the play button
-        });
+                // Function to pause the music
+                function pauseDaMusic() {
+                    audio.pause(); // Pause the music
+                }
 
-    })();
-</script>
+                // Function to handle the first user interaction (click or touch)
+                function onUserInteraction() {
+                    playDaMusic(); // Play music on first click or touch
+                    // Remove event listeners after the first interaction
+                    document.removeEventListener('click', onUserInteraction);
+                    document.removeEventListener('touchstart', onUserInteraction);
+                }
+
+                // Listen for the first user interaction (click or touch)
+                document.addEventListener('click', onUserInteraction);
+                document.addEventListener('touchstart', onUserInteraction);
+
+                // Pause music when clicking the pause area
+                var musicPauseArea = document.getElementById('musicPauseArea');
+                musicPauseArea.addEventListener("click", function () {
+                    pauseDaMusic(); // Pause music when clicking the pause button
+                });
+
+                // Play music when clicking the play area
+                var musicPlayArea = document.getElementById('musicPlayArea');
+                musicPlayArea.addEventListener("click", function () {
+                    playDaMusic(); // Play music again when clicking the play button
+                });
+
+            })();
+        </script>
 
 </body>
 
