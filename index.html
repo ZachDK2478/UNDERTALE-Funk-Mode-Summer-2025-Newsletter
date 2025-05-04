@@ -71,7 +71,7 @@
             font-family: DTS;
             font-weight: bold;
             font-style: normal;
-            font-size: 25px;
+            font-size: 22px;
             color: white;
             /* Fixes black text bug */
             text-align: center;
@@ -154,7 +154,24 @@
         img {
             display: block;
             margin: 15px auto;
+            width: 45%;
+            max-width: fit-content;
+            /* set fixed width */
+            height: 45%;
+            /* set fixed height */
+            object-fit: contain;
+            /* or "contain", depending on desired behavior */
         }
+
+        video {
+            width: 45%;
+            max-width: fit-content;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 15px auto;
+        }
+
 
         /* Responsive adjustments for mobile devices */
         @media (orientation: portrait),
@@ -163,37 +180,6 @@
                 overflow-x: hidden;
                 text-align: center;
             }
-        }
-
-        /* Image container class + div that helps user exp on mobile */
-        .responsive-img {
-            display: block;
-            /* Removes inline gap */
-            max-width: 1000px;
-            /* Shrinks to fit container */
-            height: auto;
-            /* Maintains aspect ratio */
-            margin: 0 auto;
-            /* Centers the image */
-        }
-
-        .image-container {
-            max-width: 1000px;
-            /* Optional max width */
-            margin: 0 auto;
-            /* Centers container */
-            padding: 1rem;
-        }
-
-        /* Responsive container for Twitter embeds */
-        .tweet-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .tweet-container blockquote {
-            max-width: 100%;
         }
 
         /* Special area for interaction (between "Written by Mod Director Gian" and Twitter embed) */
@@ -210,13 +196,9 @@
 <body>
     <div id="soulBG"></div>
 
-    <div class="image-container">
     <img src="assets/images/news-logo-transpbg.png" id="logo" alt="Newsletter Logo"
         title="The official newsletter logo (Summer 2025 edition)">
-    </div>
-    <div class="image-container">
-    <img src="assets/images/summer-goobers.png" id="Summer Goobers" alt="Yippee" title="The silly guys" class="responsive-img">
-    </div>
+    <img src="assets/images/summer-goobers.png" id="Summer Goobers" alt="Yippee" title="The silly guys">
     <audio id="myaudio" loop>
         <source src="assets/audio/music/Newsbopper-zdk-new.mp3" type="audio/mp3">
         Your browser does not support the audio element.
@@ -257,23 +239,30 @@
             <br>
             <p>Well, here it is! The OST discussion.</p>
             <br>
-            <p>Music is one of the most important parts of a Friday Night Funkin' mod. Shocker, I know. But I'm glad to
+            <p>Music is one of the most important parts of a Friday Night
+                Funkin' mod. Shocker, I know. But I'm glad to
                 say
                 that Undertale: Funk-Mode is in good hands.</p>
             <br>
-            <p>The team has four lead composers. Me, GontheGhost, Spunky Tunky, and Soba Noodles. We, alongside many of
-                the other composers, have been working very hard to contribute to this mod and make it's OST the best it
+            <p>The team has four lead composers. Me, GontheGhost, Spunky
+                Tunky, and Soba Noodles. We, alongside many of
+                the other composers, have been working very hard to
+                contribute to this mod and make it's OST the best it
                 can be.</p>
             <br>
-            <p>I'm very proud of our work, and we can't wait to get all of this out to you. Undertale: Funk-Mode has
+            <p>I'm very proud of our work, and we can't wait to get all of
+                this out to you. Undertale: Funk-Mode has
                 really
-                been a wonderful experience to work on. I've learned and improved with each passing day, working on this
-                mod. I hope you guys learn and improve as well, in your own personal projects.</p>
+                been a wonderful experience to work on. I've learned and
+                improved with each passing day, working on this
+                mod. I hope you guys learn and improve as well, in your own
+                personal projects.</p>
             <br>
             <p>It's thanks to you all that
                 we can even make this mod!</p>
             <br>
-            <p>Here are some of the songs we've been given permission to show you.</p>
+            <p>Here are some of the songs we've been given permission to
+                show you.</p>
 
             <br>
             <br>
@@ -328,9 +317,12 @@
             <br>
             <br>
 
-            <p>And with that, I think that concludes the OST discussion for now. We're grateful for all of the kindness
-                you've shown us, and for your continued dedication to the mod. We're trying our best to make the best
-                music for you guys. We hope you love the OST once it's all out there!</p>
+            <p>And with that, I think that concludes the OST discussion for
+                now. We're grateful for all of the kindness
+                you've shown us, and for your continued dedication to the
+                mod. We're trying our best to make the best
+                music for you guys. We hope you love the OST once it's all
+                out there!</p>
 
             <br>
             <br>
@@ -344,69 +336,86 @@
                 <br>
                 <br>
                 <br>
-                <p>Hello, im glintfish, lead programmer for Undertale: Funk Mode!</p>
+                <p>Hello, im glintfish, lead programmer for Undertale: Funk
+                    Mode!</p>
                 <br>
-                <p>Damn, this mod has been in the works for an entire year now. Its kinda crazy to think about!
-                    Ive been in this community for around 4 years now, and to think about how Funk Mode has been here
-                    for a fourth of it is... idk! Weird i guess? But a good kind of weird. Time flies by fast!</p>
+                <p>Damn, this mod has been in the works for an entire year
+                    now. Its kinda crazy to think about!
+                    Ive been in this community for around 4 years now, and
+                    to think about how Funk Mode has been here
+                    for a fourth of it is... idk! Weird i guess? But a good
+                    kind of weird. Time flies by fast!</p>
                 <br>
-                <p>I know you didnt come here to read about my life story so ill cut it short and move onto the coding
+                <p>I know you didnt come here to read about my life story so
+                    ill cut it short and move onto the coding
                     for the mod.</p>
                 <br>
-                <p>Lets not beat around the bush, coding is the main thing keeping this mod from coming out.
+                <p>Lets not beat around the bush, coding is the main thing
+                    keeping this mod from coming out.
                     Who would've guessed that coding is really hard!</p>
                 <br>
-                <p>Generally the thing thats been the biggest issue is planning ahead.
-                    We as the coders wanna make the mod as easy as possible to develop for, so that future updates can
+                <p>Generally the thing thats been the biggest issue is
+                    planning ahead.
+                    We as the coders wanna make the mod as easy as possible
+                    to develop for, so that future updates can
                     come out faster,
-                    but that also means a lot of planning, a lot of rewrites and refactors, and a LOT of code...
+                    but that also means a lot of planning, a lot of rewrites
+                    and refactors, and a LOT of code...
                     Although, not really.</p>
                 <br>
-                <p>Im not going to lie, im an optimization nut. I love optimizing and squeezing as much performance as i
+                <p>Im not going to lie, im an optimization nut. I love
+                    optimizing and squeezing as much performance as i
                     can out of
-                    literally anything, and im especially doing it now because i want EVERYONE to be able to experience
+                    literally anything, and im especially doing it now
+                    because i want EVERYONE to be able to experience
                     Funk Mode without
                     any issues.</p>
                 <br>
-                <p>As of writing (3. May 2025.), the mod has ~3200 lines of code. compared to Psych 0.7.3's ~31000 or
+                <p>As of writing (3. May 2025.), the mod has ~3200 lines of
+                    code. compared to Psych 0.7.3's ~31000 or
                     our old engines
-                    ~10000, and you can see the difference! I didn't want useless code and random stuff cluttering the
+                    ~10000, and you can see the difference! I didn't want
+                    useless code and random stuff cluttering the
                     codebase,
-                    so we ended up switching engines to one I was in the process of working on, which turned out to be a
+                    so we ended up switching engines to one I was in the
+                    process of working on, which turned out to be a
                     huge success!</p>
                 <br>
-                <p>Everything is insanely modular, easy to work with and understand, and also DOCUMENTED, unlike
+                <p>Everything is insanely modular, easy to work with and
+                    understand, and also DOCUMENTED, unlike
                     literally every
-                    other FNF mod / engine out there. I dont wanna sound like im bragging, but im just insanely happy
+                    other FNF mod / engine out there. I dont wanna sound
+                    like im bragging, but im just insanely happy
                     with the
                     way everything was done for this mod.</p>
                 <br>
-                <p>Now back to the actual progress. Again, as of writing, I just finished the mods new overworld
+                <p>Now back to the actual progress. Again, as of writing, I
+                    just finished the mods new overworld
                     implementation, and it
-                    works like a charm. Honestly, we don't really have that much stuff left to finish! Unfortunately, I
+                    works like a charm. Honestly, we don't really have that
+                    much stuff left to finish! Unfortunately, I
                     am usually the
-                    one pulling most of the weight as our other coders are fairly busy, but I don't mind that- I like
+                    one pulling most of the weight as our other coders are
+                    fairly busy, but I don't mind that- I like
                     working on Funk Mode!</p>
                 <br>
                 <p>This is what it looked like before I fixed it LMAO</p>
                 <br>
-                <div class="image-container">
                 <img src="assets/images/coding-struggles/fuckkkkk.png" alt="fuck" title="fuck.overworld">
-                </div>
                 <br>
-                <p>I am thinking about open sourcing Funk Mode once it releases, but at the same time, I don't want
+                <p>I am thinking about open sourcing Funk Mode once it
+                    releases, but at the same time, I don't want
                     people blatantly
-                    stealing all my hard work, which is what the community usually does. I dunno, we'll see when the
+                    stealing all my hard work, which is what the community
+                    usually does. I dunno, we'll see when the
                     time comes!</p>
                 <br>
                 <p>That's it for now, thanks for reading!</p>
                 <br>
                 <br>
                 <p>* The dummy needs time to concentrate . . . </p>
-                <div class="image-container">
                 <img src="assets/images/little-sprites/glintfish-concentrate.png" alt="Glintfish Concentrating lol"
                     title="The dummy needs time to concentrate .  .  . ">
-                </div>
                 <br>
                 <br>
                 <br>
@@ -420,46 +429,54 @@
                     <br>
                     <p>Hello again! Yep, that's right, it's me!</p>
                     <br>
-                    <p>Turns out one of the lead composers is actually the coder for the newsletter. Yep, that's right.
+                    <p>Turns out one of the lead composers is actually the
+                        coder for the newsletter. Yep, that's right.
                     </p>
                     <br>
-                    <p>This newsletter has taken a lot of effort for me to get done. Initially, this was meant to be a
-                        Spring 2025 Newsletter. As you can tell, it ended up being a Summer themed newsletter instead.
+                    <p>This newsletter has taken a lot of effort for me to
+                        get done. Initially, this was meant to be a
+                        Spring 2025 Newsletter. As you can tell, it ended up
+                        being a Summer themed newsletter instead.
                     </p>
                     <br>
-                    <p>I've tried to make it as readable and user-friendly as possible. Even though things have been
-                        tough, I can only pray that my efforts weren't in vain.</p>
+                    <p>I've tried to make it as readable and user-friendly
+                        as possible. Even though things have been
+                        tough, I can only pray that my efforts weren't in
+                        vain.</p>
                     <br>
-                    <p>There isn't really much else for me to say, to be honest. I suppose I could share some
-                        screenshots Glintfish shared with me on the progress of coding the mod.</p>
+                    <p>There isn't really much else for me to say, to be
+                        honest. I suppose I could share some
+                        screenshots Glintfish shared with me on the progress
+                        of coding the mod.</p>
                     <br>
                     <p>So, uh...here you go.</p>
                     <br>
                     <br>
-                    <div class="image-container">
-                        <video width="1280" height="720" controls>
-                        <source src="assets/images/coding-struggles/augughhghhghhg.mp4" type="video/mp4" class="responsive-img">
+                    <video width="1280" height="720" controls>
+                        <source src="assets/images/coding-struggles/augughhghhghhg.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                        </video>
-                    <img src="assets/images/coding-struggles/fanon toriel.png" alt="fanon toriel" title="fanon toriel" class="responsive-img">
+                    </video>
+                    <img src="assets/images/coding-struggles/fanon toriel.png" alt="fanon toriel" title="fanon toriel">
                     <img src="assets/images/coding-struggles/christ.png" alt="weird memory drawing i think"
-                        title="weird memory drawing LMAO" class="responsive-img">
+                        title="weird memory drawing LMAO">
                     <img src="assets/images/coding-struggles/kms.png" alt="Newsletter growing pains"
-                        title="Newsletter growing pains" class="responsive-img">
-                    </div>
+                        title="Newsletter growing pains">
                     <br>
-                    <p>But that's it for coding struggles! I don't really have much else to say other than getting that
+                    <p>But that's it for coding struggles! I don't really
+                        have much else to say other than getting that
                         video to work was a pain.</p>
                     <br>
                     <p>Have a great day, everyone!</p>
                     <br>
-                    <p>* You feel a totally random urge to pay robux for funk mode skins...in robox...</p>
+                    <p>* You feel a totally random urge to pay robux for
+                        funk mode skins...in robox...</p>
 
                     <a href="https://www.roblox.com/communities/34411291/SRB-Ugcs#!/about">
                         <img src="assets/images/silly/roblox-dance.gif" alt="the random urge" title="robux">
                     </a>
 
-                    <p>* pico is here too, by the way. this is your consicence speaking, you should pay robux for them.
+                    <p>* pico is here too, by the way. this is your
+                        consicence speaking, you should pay robux for them.
                         lol</p>
 
                     <br>
@@ -476,17 +493,24 @@
                     <br>
                     <br>
 
-                    <p>Pico is officially confirmed for the mod, and he should appear in this demo. We already have a
-                        good couple of ideas for him, with some things in the works. Pico's story will be centered
-                        around the events of Undertale Yellow. He will encounter characters like Dalv, Martlet, Starlo,
+                    <p>Pico is officially confirmed for the mod, and he
+                        should appear in this demo. We already have a
+                        good couple of ideas for him, with some things in
+                        the works. Pico's story will be centered
+                        around the events of Undertale Yellow. He will
+                        encounter characters like Dalv, Martlet, Starlo,
                         etc. etc.</p>
                     <br>
-                    <p>On the topic of playable characters from the fnf universe, we still don't have anything for
-                        anyone else. We know that there are people who want to see Nene and even Senpai, but there are
-                        currently no plans for them. Our priority is for the main gameplay of Funk-Mode first, and
+                    <p>On the topic of playable characters from the fnf
+                        universe, we still don't have anything for
+                        anyone else. We know that there are people who want
+                        to see Nene and even Senpai, but there are
+                        currently no plans for them. Our priority is for the
+                        main gameplay of Funk-Mode first, and
                         playable characters second.</p>
                     <br>
-                    <p>Even so, if we find a couple ideas and ways to include them, you can trust that Pico won't be the
+                    <p>Even so, if we find a couple ideas and ways to
+                        include them, you can trust that Pico won't be the
                         only character to be featured in the mod!</p>
                     <br>
                 </div>
